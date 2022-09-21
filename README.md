@@ -1,2 +1,5 @@
-# RobertBorghese.github.io
-Used to host documentation and stuff.
+## Main Page
+robertborghese.github.io
+
+## Laxe Documentation
+robertborghese.github.io/laxe
