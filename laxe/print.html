@@ -1,0 +1,1074 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title></title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Intro.html"><strong aria-hidden="true">1.</strong> Intro</a></li><li class="chapter-item expanded "><a href="Installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="HowItWorks.html"><strong aria-hidden="true">3.</strong> How it Works</a></li><li class="chapter-item expanded "><a href="Downsides.html"><strong aria-hidden="true">4.</strong> Downsides</a></li><li class="chapter-item expanded "><a href="1_compiler/index.html"><strong aria-hidden="true">5.</strong> Compiler Options</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="1_compiler/Defines.html"><strong aria-hidden="true">5.1.</strong> Defines</a></li><li class="chapter-item expanded "><a href="1_compiler/Functions.html"><strong aria-hidden="true">5.2.</strong> Functions</a></li></ol></li><li class="chapter-item expanded "><a href="2_syntax/index.html"><strong aria-hidden="true">6.</strong> Basic Syntax</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="2_syntax/Comments.html"><strong aria-hidden="true">6.1.</strong> Comments</a></li><li class="chapter-item expanded "><a href="2_syntax/Semicolons.html"><strong aria-hidden="true">6.2.</strong> Semicolons</a></li><li class="chapter-item expanded "><a href="2_syntax/Variables.html"><strong aria-hidden="true">6.3.</strong> Variables</a></li><li class="chapter-item expanded "><a href="2_syntax/Functions.html"><strong aria-hidden="true">6.4.</strong> Functions</a></li><li class="chapter-item expanded "><a href="2_syntax/Classes.html"><strong aria-hidden="true">6.5.</strong> Classes</a></li><li class="chapter-item expanded "><a href="2_syntax/Primitives.html"><strong aria-hidden="true">6.6.</strong> Primitives</a></li><li class="chapter-item expanded "><a href="2_syntax/ControlFlow.html"><strong aria-hidden="true">6.7.</strong> Control Flow</a></li><li class="chapter-item expanded "><a href="2_syntax/Wrappers.html"><strong aria-hidden="true">6.8.</strong> Wrappers</a></li><li class="chapter-item expanded "><a href="2_syntax/Enums.html"><strong aria-hidden="true">6.9.</strong> Enums</a></li><li class="chapter-item expanded "><a href="2_syntax/HaxeMetadata.html"><strong aria-hidden="true">6.10.</strong> Haxe Metadata</a></li></ol></li><li class="chapter-item expanded "><a href="3_features/index.html"><strong aria-hidden="true">7.</strong> Laxe Features</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="3_features/Modify.html"><strong aria-hidden="true">7.1.</strong> Modify</a></li><li class="chapter-item expanded "><a href="3_features/ItBlock.html"><strong aria-hidden="true">7.2.</strong> It Block</a></li><li class="chapter-item expanded "><a href="3_features/Tuples.html"><strong aria-hidden="true">7.3.</strong> Tuples</a></li><li class="chapter-item expanded "><a href="3_features/NamedTuples.html"><strong aria-hidden="true">7.4.</strong> Named Tuples</a></li><li class="chapter-item expanded "><a href="3_features/PositionalUnpack.html"><strong aria-hidden="true">7.5.</strong> Positional Unpack</a></li><li class="chapter-item expanded "><a href="3_features/NamedUnpack.html"><strong aria-hidden="true">7.6.</strong> Named Unpack</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="intro"><a class="header" href="#intro">Intro</a></h1>
+<h1 id="what-is-laxe"><a class="header" href="#what-is-laxe">What is Laxe?</a></h1>
+<p>Laxe is a programming langauge that is read and run using <a href="https://haxe.org">Haxe</a>.</p>
+<p>Using Haxe's powerful compile-time capabilities, Laxe's source files are read and compiled into Haxe AST. The rest is handled by Haxe's compiler! Since Laxe is compiled to be valid Haxe, it is 100% interoperable with Haxe projects. Source files from both Haxe and Laxe can be mixed without much issue.</p>
+<p>Long story short, Laxe is an alternative syntax for Haxe. It's based on Python's syntax and tries to be concise, fun, and cool.</p>
+<h2 id="basic-syntax"><a class="header" href="#basic-syntax">Basic Syntax</a></h2>
+<pre><code class="language-laxe"># Class
+class Player:
+	var sprite: Sprite
+	var position: { x: float, y: float }
+
+	def new(imagePath: str):
+		sprite = Sprite.loadImage(imagePath)
+		position = { x: 0, y: 0 }
+
+# Main function
+def main:
+	const player = new Player(&quot;img/Guy.png&quot;)
+</code></pre>
+<h2 id="macros"><a class="header" href="#macros">Macros</a></h2>
+<pre><code class="language-laxe"># Use type-safe expression object
+macro forLoop(start: expr`, check: expr`, increment: expr`, scope: expr`) -&gt; expr`:
+	return template expr:
+		$start
+		while $check:
+			$scope
+			$increment
+
+# Or construct expression using string
+macro print(msg: str, ...args: expr`) -&gt; str:
+	var index = 1
+	for e in args:
+		msg = msg.replace(&quot;%&quot; + index, &quot;' + &quot; + e.toString() + &quot; + '&quot;)
+		index++
+	return &quot;trace('&quot; + msg + &quot;')&quot;
+
+# Main function
+def main:
+	forLoop(var i = 0, i &lt; 10, i++):
+		if i % 2 == 0:
+			print!(&quot;%1 is an even number.&quot;, i)
+</code></pre>
+<h2 id="decors"><a class="header" href="#decors">Decors</a></h2>
+<pre><code class="language-laxe"># Typed decorators
+decor ForLoop(start: expr`, check: expr`, increment: expr`):
+	def onExpr(e: expr`):
+		return template expr:
+			$start
+			while $check:
+				$e
+				$increment
+
+# Main function
+def main:
+	@ForLoop(var i = 0, i &lt; 10, i++)
+	block:
+		if i % 2 == 0:
+			trace(i + &quot; is an even number.&quot;)
+</code></pre>
+<h2 id="tuples-nullables-arrays"><a class="header" href="#tuples-nullables-arrays">Tuples, Nullables, Arrays</a></h2>
+<pre><code class="language-laxe"># Get tuple of string and float
+def getColor -&gt; (str, int) = (&quot;#ff3377&quot;, 0.5)
+
+# Returns an Entity or null
+def makeEntity -&gt; Entity?:
+	var (color, alpha) = getColor()
+
+	if alpha &lt;= 0:
+		return null
+
+	var entity = new Entity()
+	entity.tint = color
+	entity.alpha = alpha
+
+	return entity
+
+# Returns array of Entity
+def setupEntities -&gt; Entity[]:
+	var result = []
+
+	for i in 0...10:
+		var e = makeEntity()
+		if e != null:
+			result.push(e)
+
+	return result
+</code></pre>
+<h2 id="converted-haxe-example"><a class="header" href="#converted-haxe-example">Converted Haxe Example</a></h2>
+<p>Below is the Laxe equivalent of the code shown on <a href="https://haxe.org">haxe.org</a>. </p>
+<pre><code class="language-laxe">def main:
+	var playerA = { name: &quot;Simon&quot;, move: Paper }
+	var playerB = { name: &quot;Nicolas&quot;, move: Rock }
+
+	var result = switch [playerA.move, playerB.move]:
+		case [Rock, Scissors] |
+			 [Paper, Rock] |
+			 [Scissors, Paper]: Winner(playerA)
+
+		case [Rock, Paper] |
+			 [Paper, Scissors] |
+			 [Scissors, Rock]: Winner(playerB)
+
+		case _: Draw
+
+	trace('result: $result')
+
+alias type Player = { name: str, move: Move }
+
+enum Move:
+	Rock; Paper; Scissors
+
+enum Result:
+	Winner(Player)
+	Draw
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
+<p>Laxe is built on top of Haxe and functions as a noncommittal alternative for writing source code. Using it is as simple as <a href="https://haxe.org/documentation/platforms/python.html">creating a Haxe project</a> and installing the <code>laxe</code> library from <code>haxelib</code>. </p>
+<p>First, install the library using <code>haxelib</code>.</p>
+<pre><code>haxelib install laxe
+</code></pre>
+<p>Next, add the library to your <code>.hxml</code> file.</p>
+<pre><code>-lib laxe
+</code></pre>
+<p>And... you're done! All you need to do now is create files with a <code>.lx</code> extension in your source code directory, and the Laxe library will read and compile them while the Haxe code is also being compiled!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="how-it-works"><a class="header" href="#how-it-works">How it Works</a></h1>
+<p>Laxe is only possible to due the brillant, god-like metaprogramming capabilities of Haxe. Haxe has multiple phases of compile-time metaprogramming that can be used to rewrite Haxe code using itself. Laxe takes advantage of the earliest stage, running an <a href="https://haxe.org/manual/macro-initialization.html">initialization macro</a> that reads the Laxe code and handles it accordingly!</p>
+<p>The Laxe code is parsed and converted into valid Haxe AST, which is then defined into the project using <a href="https://api.haxe.org/haxe/macro/Context.html">Context.defineModule</a>. This all happens before the typing phase of Haxe's compilation, so both Laxe and Haxe code is typed together. This results in unparalleled interoperability between two languages with completely different syntaxes. Definitions in Haxe or Laxe can be referenced as if they're both written in the same language!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="downsides"><a class="header" href="#downsides">Downsides</a></h1>
+<p>There are a couple downsides/non-goals of Laxe that should be noted.</p>
+<h2 id="no-macro-interoperability"><a class="header" href="#no-macro-interoperability">No Macro Interoperability</a></h2>
+<p>Unfortunately, Laxe is limited by what's possible with <code>Context.defineModule</code>. One of those things is a lack of support for Haxe <code>macro</code> functions. Since Laxe AST needs to be parsed and ready within the initialization phase of Haxe's compilation, it has no way to using Haxe-specific <code>macro</code> functions.</p>
+<p>Fortunately, Laxe provides its own (much more powerful) set of metaprogramming features, one of those being its own system for <code>macro</code> functions. So while Haxe <code>macro</code>s are incompatible, Laxe does not lose out of this feature. More details about this can be found later in the metaprogramming section.</p>
+<h2 id="laxe-feature-restrictions"><a class="header" href="#laxe-feature-restrictions">Laxe Feature Restrictions</a></h2>
+<p>The other weakness of Laxe is that it relies upon the Haxe compiler's typing. Haxe expressions can have their positional data be assigned to any file and position. This allows Laxe to associate typing issues with file-positions of Laxe source code. But leaving everything to the Haxe compiler does have some detriments.</p>
+<p>Because Laxe relies on the Haxe compiler to perform typing, Laxe code itself is not typed prior to its Haxe AST transformation. As a result, Laxe is unable to provide any additional syntax/typing features that are not already available in Haxe. An example of this would be that Haxe requires a keyword to distinguish between a variable initialization and assignment. Therefore, a Python-like system that infers an initialization from an assignment is impossible because Laxe is unable to tell whether a variable name has already been defined in a specific context. Another example is Laxe cannot differentiate between a function name and class name, so creating a class instance requires the explicit <code>new</code> keyword as opposed to Python's dynamic inference. </p>
+<p>Laxe does have a limited typing system for features and concepts exclusive to Laxe, such as <code>decorators</code>. Furthermore, there are some creative ways Laxe type features can be transformed into consistent, valid Haxe types by generating additional declarations (like generating Haxe generic classes for Laxe tuples or wrapping a Haxe type in an <code>abstract</code> to type a Laxe <code>const</code> type).</p>
+<h2 id="incomplete-platform-support"><a class="header" href="#incomplete-platform-support">Incomplete Platform Support</a></h2>
+<p>Laxe is consistently tested and aims to support the C++, C#, Hashlink, and JavaScript targets. The Java, Flash, and PHP targets have never been tested. And finally, both Python and Lua have been tested, and both targets have known bugs with Laxe. Python is incompatible with rest argument in <code>macro</code> functions, and Lua appears to be unusable due to a Haxe compiler bug.</p>
+<p>Speaking personally, I cannot imagine using the Lua or Python targets in a million years, so I've decided to not worry about them. But if you want to use Laxe, and you need one or the other, post an issue on the <a href="https://github.com/RobertBorghese/laxe">Github</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="compiler-options"><a class="header" href="#compiler-options">Compiler Options</a></h1>
+<p>This section covers the options available to be passed to the Haxe compiler or .hxml file when using the Laxe library.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="defines"><a class="header" href="#defines">Defines</a></h1>
+<p>These can be defined using <code>-D &lt;defineName&gt;</code> in the Haxe command line or .hxml file.</p>
+<table>
+  <tr>
+    <th style="width: 25%; padding: 12px;">Define Name</th>
+    <th style="width: 75%;">Description</th>
+  </tr>
+  <tr>
+    <td style="padding: 12px;"><code class="hljs">laxe.meta.UseEvalMath</code></td>
+    <td>C#, Python, and Lua have issues with Laxe's compile-time execution of <code class="hljs">macro</code> and <code class="hljs">decor</code> code. If the <code class="hljs">Math</code> class is used, it throws an error: <i>"You cannot access the [cs / python.lib.Math / lua.Math] package while in a macro"</i>.<br><br>If this define is enabled, it will resolve this issue by replacing all the <code class="hljs">Math</code> calls to their eval equivalent prior to executing.</td>
+  </tr>
+</table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="functions"><a class="header" href="#functions">Functions</a></h1>
+<p>The following functions can be used using the <code>--macro</code> feature on the Haxe command line or in an .hxml file.</p>
+<table>
+  <tr>
+    <th style="width: 25%; padding: 12px;">Function Name</th>
+    <th style="width: 75%;">Description</th>
+  </tr>
+  <tr>
+    <td style="padding: 12px;"><code class="hljs">laxe.Laxe.DisallowHaxeClassPaths()</code></td>
+    <td>If this function is called, Laxe will not check for <code class="hljs">.lx</code> source files in the Haxe class paths (<code class="hljs">-cp</code>). Instead, a Laxe class path must be defined using the <code class="hljs">laxe-cp</code> define.</td>
+  </tr>
+  <tr>
+    <td style="padding: 12px;"><code class="hljs">laxe.Laxe.AddClassPath(path: String)</code></td>
+    <td>This function provides the ability to add a class path exclusively for Laxe source files. It can be called multiple times to add multiple paths.</td>
+  </tr>
+</table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="basic-syntax-1"><a class="header" href="#basic-syntax-1">Basic Syntax</a></h1>
+<p>While Laxe does provide additional features from Haxe, this section covers Laxe's basic syntax for using Haxe's feature-set. Laxe aims to retain all of the features Haxe provides, such as the <a href="https://code.haxe.org/category/principles/everything-is-an-expression.html">&quot;everything is an expression&quot;</a> principle. </p>
+<p>While not every aspect of Laxe's syntax may be covered, anything not specified here can be assumed to be identical to Haxe's syntax.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="comments"><a class="header" href="#comments">Comments</a></h1>
+<p>Comments are based on Python.</p>
+<p>The <code>#</code> character creates a comment. The comment will last until the end of the line:</p>
+<pre><code class="language-laxe"># This is a comment
+def main:
+    # it doesn't affect code
+    pass
+</code></pre>
+<h2 id="multiline-comments"><a class="header" href="#multiline-comments">Multiline Comments</a></h2>
+<p>Unlike Python, Laxe as a specific syntax for multiline comments. They are started and ended with <code>###</code>:</p>
+<pre><code class="language-laxe">###
+This is a multiline comment
+It will keep going until it meets another:
+###
+def main:
+    pass
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="semicolons"><a class="header" href="#semicolons">Semicolons</a></h1>
+<p>Semicolons are optional. A new-line can denote the end of an expression. However, you can use semicolons to place multiple expression on the same line.</p>
+<pre><code class="language-laxe">def main:
+    trace(&quot;no semi works&quot;)
+    trace(&quot;yes semi works&quot;);
+
+    trace(&quot;same line&quot;); trace(&quot;semi required&quot;)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="variables"><a class="header" href="#variables">Variables</a></h1>
+<p>Unlike Python, Laxe uses a Haxe-like syntax for declaring new variables. <code>var</code> is used for new mutable variables, while <code>const</code> is used for immutable variables.</p>
+<pre><code class="language-laxe">var a = 164 # declared
+a = 0       # reassigned
+
+b = 12      # error: b is not defined
+
+const c = &quot;test&quot;
+c = &quot;fail&quot;  # error: c is final variable
+</code></pre>
+<h2 id="variable-type"><a class="header" href="#variable-type">Variable Type</a></h2>
+<p>To provide a type to the variable declaration, the same syntax for Haxe and Python is used (<code>varName : Type</code>). This is usually optional, as Laxe can rely upon Haxe's variable inference capabilities, but still necessary for variables without an assigned value. </p>
+<pre><code class="language-laxe">var p: Player;
+
+if self.hasEntities():
+	p = self.getFirstEntity()
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="functions-1"><a class="header" href="#functions-1">Functions</a></h1>
+<p>Functions are based on Python's function syntax.</p>
+<p>Using <code>def</code> functions can be created using the following syntax:</p>
+<pre><code class="language-laxe">def myFunctionName:
+    # insert function code here
+</code></pre>
+<p>Similar to Python, Laxe uses whitespace to denote when the function body begins/ends. All of the function content must retain the same identation:</p>
+<pre><code class="language-laxe">def myFunctionName:
+    var a = 12
+    trace(a)
+      a += 1 # inconsistent identation
+</code></pre>
+<h2 id="arguments"><a class="header" href="#arguments">Arguments</a></h2>
+<p>Function arguments can be provided using parentheses after the function name. The typing syntax is the same as Haxe's. Laxe is a statically typed language, but Haxe can infer some types, so while they aren't necessary, types are recommended:</p>
+<pre><code class="language-laxe">def myFunctionName(myParam1, myParam2: str):
+    trace(myParam1)
+    trace(myParam2) # myParam2 is a String
+
+
+def addTwoNumbers(one: int, two: int):
+    trace(one + two)
+</code></pre>
+<h2 id="return-type"><a class="header" href="#return-type">Return Type</a></h2>
+<p>Function return types can be specified using <code>-&gt;</code>. Similar to argument types, the Haxe compiler will attempt to infer them otherwise.</p>
+<pre><code class="language-laxe">def getSum(one: int, two: int) -&gt; int:
+    return one + two
+</code></pre>
+<h2 id="shorthand-definitions"><a class="header" href="#shorthand-definitions">Shorthand Definitions</a></h2>
+<p>Similar to Python, if only one expression is required for the function body, it can be placed beside the <code>:</code>:</p>
+<pre><code class="language-laxe">def getSum(one: int, two: int) -&gt; int: return one + two
+</code></pre>
+<p>Function declarations that only contain a return statement can be shortened further using the <code>=</code> operator. Instead of the <code>:</code>, use <code>=</code> followed by the desired expression to be returned.</p>
+<pre><code class="language-laxe">def getSum(one: int, two: int) -&gt; int = one + two
+</code></pre>
+<h2 id="functions-in-expressions"><a class="header" href="#functions-in-expressions">Functions in Expressions</a></h2>
+<p>Functions can be declared as expressions:</p>
+<pre><code class="language-laxe">def main
+    def exprFunc:
+        trace(&quot;called local function&quot;)
+
+    exprFunc()
+</code></pre>
+<p>Functions can also be assigned to variables. In cases like this, they can be left unnamed as well.</p>
+<pre><code class="language-laxe">def main:
+    const exprFunc = def:
+        trace(&quot;called localfunction&quot;)
+
+    exprFunc()
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="classes"><a class="header" href="#classes">Classes</a></h1>
+<p>Classes are a common feature of object-oriented languages and are avaiable in both Haxe and Python. In general, Laxe's classes have the same syntax as Python, but the shares Haxe's names for special functions.</p>
+<p>Using the <code>class</code> keyword, classes can be created using the following syntax:</p>
+<pre><code class="language-laxe">class MyClass:
+	# variable members
+	var memberNum: int
+	var memberStr: str
+
+	# methods
+	def doSomething:
+		trace(&quot;Did something.&quot;)
+</code></pre>
+<h2 id="constructor"><a class="header" href="#constructor">Constructor</a></h2>
+<p>Constructors are the same as Haxe's. Creating a method named <code>new</code> will act as the constructor.</p>
+<pre><code class="language-laxe">class MyClass:
+	def new:
+		trace(&quot;Class was created&quot;)
+</code></pre>
+<p>An instance of a class can be made using the <code>new</code> keyword.</p>
+<pre><code class="language-laxe">var cls = new MyClass() # prints &quot;Class was created&quot;
+</code></pre>
+<h2 id="self-reference"><a class="header" href="#self-reference"><code>self</code> Reference</a></h2>
+<p>Unlike Python, Laxe does not require an explicit <code>self</code> argument in methods. It is automatically available on all instance methods.</p>
+<pre><code class="language-laxe">class MyClass:
+	var member: int
+
+	def new:
+		self.member = 100
+</code></pre>
+<p>Also, Haxe can infer a variable or function as a class member without being explicitly accessed from <code>self</code>, so Laxe can do this as well.</p>
+<pre><code class="language-laxe">class MyClass:
+	var member: int
+
+	def new:
+		# same as &quot;self.setup()&quot;
+		setup()
+
+	def setup:
+		# same as &quot;self.member = 100&quot;
+		member = 100
+</code></pre>
+<h2 id="inheritance"><a class="header" href="#inheritance">Inheritance</a></h2>
+<p>Classes can be <a href="https://haxe.org/manual/types-class-inheritance.html">inherited</a> using the <code>extends</code> keyword.</p>
+<pre><code class="language-laxe">class MySubClass extends MyClass:
+	# constructor already defined in MyClass
+
+	# &quot;member&quot; variable already defined in MyClass
+	def incrementMember(amount: int = 1):
+		member += amount
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="primitives"><a class="header" href="#primitives">Primitives</a></h1>
+<p>As you may have noticed so far, while Laxe is typed by Haxe, it uses primitive type names based on Python. This is because Laxe provides aliases for various, common Haxe types like <code>Int</code>, <code>String</code>, <code>Bool</code>, etc. Laxe supports both the original names from Haxe or the Python-based aliases.</p>
+<h2 id="type-aliases"><a class="header" href="#type-aliases">Type-Aliases</a></h2>
+<table>
+  <tr>
+    <th style="width: 25%; padding: 12px;">Laxe Type</th>
+    <th style="width: 25%;">Haxe Equivalent</th>
+    <th style="width: 50%;">Description</th>
+  </tr>
+  <tr>
+    <td style="padding: 12px;"><code class="hljs">int</code></td>
+    <td><code class="hljs">Int</code></td>
+    <td>The basic integer type.</td>
+  </tr>
+  <tr>
+    <td style="padding: 12px;"><code class="hljs">float</code></td>
+    <td><code class="hljs">Float</code></td>
+    <td>The basic floating-point type.</td>
+  </tr>
+  <tr>
+    <td style="padding: 12px;"><code class="hljs">bool</code></td>
+    <td><code class="hljs">Bool</code></td>
+    <td>A binary type that stores either <code class="hljs">true</code> or <code class="hljs">false</code>.</td>
+  </tr>
+  <tr>
+    <td style="padding: 12px;"><code class="hljs">str</code></td>
+    <td><code class="hljs">laxe.stdlib.String</code></td>
+    <td>The string type (wraps Haxe's <code class="hljs">String</code> class).</td>
+  </tr>
+  <tr>
+    <td style="padding: 12px;"><code class="hljs">void</code></td>
+    <td><code class="hljs">Void</code></td>
+    <td>A type used to describe "no-type" in special cases.</td>
+  </tr>
+  <tr>
+    <td style="padding: 12px;"><code class="hljs">dyn</code></td>
+    <td><code class="hljs">Dynamic</code></td>
+    <td>Haxe's special <a href="https://haxe.org/manual/types-dynamic.html">Dynamic</a> type.</td>
+  </tr>
+  <tr>
+    <td style="padding: 12px;"><code class="hljs">any</code></td>
+    <td><code class="hljs">Any</code></td>
+    <td>Haxe's special <a href="https://haxe.org/manual/types-dynamic-any.html">Any</a> type.</td>
+  </tr>
+  <tr>
+    <td style="padding: 12px;"><code class="hljs">expr`</code></td>
+    <td><code class="hljs">laxe.stdlib.LaxeExpr</code></td>
+    <td>Shorthand for Laxe wrapper of Haxe's <code class="hljs">haxe.macro.Expr</code> type.</td>
+  </tr>
+  <tr>
+    <td style="padding: 12px;"><code class="hljs">typeDef`</code></td>
+    <td><code class="hljs">laxe.stdlib.LaxeTypeDefinition</code></td>
+    <td>Shorthand for Laxe wrapper of Haxe's <code class="hljs">haxe.macro.TypeDefinition</code> type.</td>
+  </tr>
+  <tr>
+    <td style="padding: 12px;"><code class="hljs">field`</code></td>
+    <td><code class="hljs">laxe.stdlib.LaxeField</code></td>
+    <td>Shorthand for Laxe wrapper of Haxe's <code class="hljs">haxe.macro.Field</code> type.</td>
+  </tr>
+</table>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="control-flow"><a class="header" href="#control-flow">Control Flow</a></h1>
+<p>Laxe provides all the standard forms of control flow (<code>if</code>, <code>while</code>, <code>for</code>, etc.).</p>
+<h2 id="scope"><a class="header" href="#scope">Scope</a></h2>
+<p>An important aspect of control flow is scope. While Python does not scope variables in functions, Laxe follows Haxe's scoping rules.</p>
+<p>Haxe, and C-based languages in general, are typically able to create a block of scoped code without using control flow by containing code within <code>{ ... }</code> brackets. This allows programmers to manage the visibility of temporary variables or, in Haxe's case, process expressions in a sub-scope to return a temporary value.</p>
+<p>Unlike Python, Laxe provides the ability to create an arbitrary scope using the <code>block</code> keyword.</p>
+<pre><code class="language-laxe">var name = &quot;Joe&quot;
+
+block:
+	var name = &quot;Bob&quot;
+	trace(name) # Bob
+
+# ---
+
+var diameter = 3
+var area = block:
+	var radius = diameter / 2
+	var pi = Math.PI
+	radius * radius * pi
+
+trace(area) # 7.06858347058
+</code></pre>
+<h2 id="if-else-if-else"><a class="header" href="#if-else-if-else">if, else if, else</a></h2>
+<p>These look and work just like Python's <code>if</code> statements, conditionally executing code based on a boolean value. Like Haxe, the chain of <code>if</code>/<code>else</code> can be treated like a value as long as each branch resolves to a value.</p>
+<p>Note: Laxe allows both <code>else if</code> and <code>elif</code> syntax. Feel free to use whichever is more comfortable.</p>
+<pre><code class="language-laxe">var number = 22
+
+if number == 22:
+	trace(&quot;The number is 22&quot;)
+
+var result = if Math.random() &lt; 0.5:
+	&quot;Hello&quot;
+else if number == 22:
+	&quot;World&quot;
+else:
+	&quot;&quot;
+
+trace(result) # 50% chance of being &quot;Hello&quot;, otherwise is &quot;World&quot; 
+</code></pre>
+<h2 id="while-runonce-loop"><a class="header" href="#while-runonce-loop">while, runonce, loop</a></h2>
+<p>The <code>while</code> statement works as expected. It will continue to loop as long as the provided expression returns <code>true</code>. The <code>break</code> statement can be used to immediately cancel the <code>while</code>. The <code>continue</code> statement can be used to cancel the current iteration and start the next one.</p>
+<p>If the <code>runonce</code> keyword is prepended to the while statement, it will first run once regardless of the expression being <code>true</code>. After it runs once, it will function like a normal <code>while</code> loop, first checking the condition and running if <code>true</code>.</p>
+<p>Finally, the <code>loop</code> keyword can be used instead of <code>while</code>. The <code>loop</code> does not take a condition and instead loops forever. To end the <code>loop</code>, the <code>break</code> keyword must be used.</p>
+<pre><code class="language-laxe">var index = 0
+while index &lt; 5:
+	index += 2
+	trace(index) # prints 2, 4, then 6
+
+# ---
+
+runonce while index &lt; 0:
+	index--
+
+# index will decrement from 6 to 5 since
+# runonce runs once regardless of condition
+trace(index) # 5
+
+# ---
+
+# loop indefinitely
+loop:
+	if index % 2 == 1:
+		index++
+		continue
+
+	index /= 2
+
+	trace(index) # prints 4, then 2
+
+	if index == 2:
+		break # break must be invoked manually
+</code></pre>
+<h2 id="for"><a class="header" href="#for">for</a></h2>
+<p><code>for</code> iterates through an <code>Iterable</code> object, running the provided code for each instance contained within.</p>
+<p>An iterator between two <code>int</code>s can be created using the <code>...</code> operator.</p>
+<pre><code class="language-laxe">for i in 0...5:
+	trace(i) # prints 0, 1, 2, 3, 4
+
+# ---
+
+var msgList = [&quot;Hello friend.&quot;, &quot;How are you?&quot;]
+for message in msgList:
+	trace(message) # prints each string in &quot;msgList&quot;
+</code></pre>
+<h2 id="switch"><a class="header" href="#switch">switch</a></h2>
+<p><code>switch</code> works just like in <a href="https://haxe.org/manual/expression-switch.html">Haxe</a>, with full support for <a href="https://haxe.org/manual/lf-pattern-matching.html">pattern matching</a> and <a href="https://haxe.org/manual/lf-pattern-matching-guards.html">guard-cases</a>.</p>
+<pre><code class="language-laxe">var color = &quot;red&quot;
+
+var hex = switch color:
+	case &quot;red&quot;: 0xff0000
+
+	case &quot;green&quot; | &quot;emerald&quot;: 0x00ff00
+
+	case &quot;blue&quot; | &quot;sapphire&quot;: 0x0000ff
+
+	case _ if color.startsWith(&quot;0x&quot;):
+		Std.parseInt(color)
+
+	case _: null
+
+trace(StringTools.hex(hex)) # ff0000
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="wrappers"><a class="header" href="#wrappers">Wrappers</a></h1>
+<p>Wrappers are the name of <a href="https://haxe.org/manual/types-abstract.html">Haxe's <code>abstract</code> feature</a> in Laxe. It was renamed so it doesn't share the name of the <code>abstract class</code>. Wrappers act and work as one would expect.</p>
+<pre><code class="language-laxe">wrapper Temperature extends int:
+	inline def new(i: int):
+		self = i
+
+	def asFahrenheit -&gt; int:
+		return Math.round(self * 1.8 + 32)
+
+	def asCelsius -&gt; int:
+		return self
+
+	def toString -&gt; str:
+		return self + &quot;°C&quot;
+
+# ---
+
+var temp = new Temperature(5)
+
+trace(temp) # &quot;5°C&quot;
+
+trace(temp.asFahrenheit()) # 41
+</code></pre>
+<h2 id="implicit-casts"><a class="header" href="#implicit-casts">Implicit Casts</a></h2>
+<p>View <a href="https://haxe.org/manual/types-abstract-implicit-casts.html">Haxe's page</a> for more info. The following syntax may be used for implicit casts.</p>
+<pre><code class="language-laxe"># Implicitly convert from and to int
+wrapper Temperature extends int from int to int:
+	inline def new(i: int):
+		self = i
+
+	# Haxe metadata can be used to specify more implicit casts
+	# Visit the &quot;Haxe Metadata&quot; section for more info and rules.
+	@:from
+	static def fromString(s: str):
+		return new Temperature(Std.parseInt(s))
+
+	@:to
+	def toArray:
+		return [self]
+</code></pre>
+<h2 id="forwarding-and-operator-overloading"><a class="header" href="#forwarding-and-operator-overloading">Forwarding and Operator Overloading</a></h2>
+<p>These features also work and are managed by Haxe. Use Haxe metadata to configure these features.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="enums"><a class="header" href="#enums">Enums</a></h1>
+<p>Enums provide a named set of options that may possibly contain additional values. Variables of an enum type may contain one of its options, and switch statements can be used to configure behavior based on the value.</p>
+<pre><code class="language-laxe">enum Color:
+	Red
+	Green
+	Blue
+	Custom(r: int, g: int, b: int)
+	HexColor(hex: str)
+
+# ---
+
+var col1 = Green
+var col2 = Custom(125, 255, 60)
+var col3 = HexColor(&quot;#ff4422&quot;)
+
+switch col1:
+	case Red | Green | Blue:
+		trace(&quot;It is simple color&quot;)
+
+	case Custom(r, _, _):
+		trace(&quot;It is custom color with red value: &quot; + r)
+
+	case HexColor(hex):
+		trace(&quot;It is hex color: &quot; + hex)
+</code></pre>
+<h2 id="enum-methods"><a class="header" href="#enum-methods">Enum Methods</a></h2>
+<p>Unlike Haxe, methods can be added to enums and executed like a class method. It does this by generating a <code>wrapper</code> (or <code>abstract</code> in Haxe terms) that wraps and includes the functions.</p>
+<p>The only downside is due to typing limitations with Laxe, the global enum values must be explicitly cast to the enum for the methods to work. Otherwise, they'll be typed as the internal enum.</p>
+<pre><code class="language-laxe">enum Flavor:
+	Chocolate
+	Vanilla
+
+	def getName -&gt; str:
+		return switch self:
+			case Chocolate: &quot;chocolate&quot;
+			case Vanilla: &quot;vanilla&quot;
+
+	def eat:
+		switch self:
+			case Chocolate:
+				trace(&quot;Yummy!&quot;)
+			case Vanilla:
+				trace(&quot;Ew...&quot;)
+
+# ---
+
+# Error: eat is not member of type IFlavor
+var flavor1 = Chocolate
+flavor1.eat()
+
+# Works
+var flavor2 = Chocolate as Flavor
+flavor2.eat() # Prints &quot;Yummy!&quot;
+
+# Works
+var flavor3: Flavor = Vanilla
+flavor3.eat() # Prints &quot;Ew...&quot;
+
+# ---
+
+def printFlavor(flavor: Flavor):
+	# Argument implicitly casts, so this works
+	trace(&quot;The flavor is &quot; + flavor.getName())
+
+printFlavor(Chocolate)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="haxe-metadata"><a class="header" href="#haxe-metadata">Haxe Metadata</a></h1>
+<p>Laxe provides a typed-metadata system called Decorators (named after system from Python). Decorators use the same syntax as Haxe's metadata, so a special syntax is required for specifying the metadata is not a Decorator.</p>
+<p>By surronding the metadata's text with quotes, it will be treated like Haxe metadata and be added to the Haxe AST.</p>
+<pre><code class="language-laxe">@&quot;:rtti&quot;
+@&quot;Haxe Metadata&quot;(&quot;foo&quot;, 841)
+class SomeClass:
+	@&quot;range&quot;(12, 100)
+	var value: int
+
+	def new: pass
+
+# ---
+
+trace(Rtti.hasRtti(SomeClass)) # true
+
+const range = Meta.getFields(SomeClass).value.range;
+trace(range.length) # 2
+</code></pre>
+<h2 id="-shorthand"><a class="header" href="#-shorthand">: Shorthand</a></h2>
+<p>Laxe's Decorators do not use <code>:</code>. So quotes are not required for Haxe metadata that starts with <code>:</code>; it can just be written like it would be in Haxe.</p>
+<pre><code class="language-laxe">@:structInit
+class MyClass:
+	var input: int
+
+	def new(input: int):
+		self.input = input
+
+# ---
+
+var input: MyClass = { input: 32 }
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="laxe-features"><a class="header" href="#laxe-features">Laxe Features</a></h1>
+<p>This section covers features that Laxe provides that do not exist in Haxe.</p>
+<p>This does not include metaprogramming features like <code>macro</code> functions and typed Decorators. Please visit the Metaprogramming section for more information on those.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="modify"><a class="header" href="#modify">Modify</a></h1>
+<p>The <code>modify</code> keyword allows one to modify and append content to an existing <code>class</code>, <code>wrapper</code>, or <code>enum</code>. If the type definition is from Laxe, the content is simply merged for being defined in Haxe. On the other hand, if the type cannot be found, it is assumed to be defined in Haxe. In that case, a <code>@:build</code> metadata is used to add the content to the Haxe class (TODO).</p>
+<p>This feature can be helpful for separating a class definition into multiple parts in different source files. Alternatively, it can be very helpful for adding variables and functions to existing types defined in other libraries.</p>
+<p>To use <code>modify</code>, type the keyword followed by the full class path of the type. Please note any generic arguments, super classes, or interfaces the original type relies upon should not be included.</p>
+<pre><code class="language-laxe">class Entity:
+	var hp = 0
+
+	def new:
+		pass
+
+# ---
+
+modify mypackage.Entity:
+	var mp = 0
+
+	def addMagic(value: int):
+		mp += value
+
+# ---
+
+var entity = new Entity()
+entity.addMagic(23) # valid
+</code></pre>
+<p>Here is an example of modifying an existing type.</p>
+<pre><code class="language-laxe">modify haxe.ds.Vector:
+	inline def first -&gt; T:
+		if self.length &gt; 0:
+			return self.get(0)
+		else:
+			throw &quot;Could not get first element&quot;
+</code></pre>
+<h2 id="rename"><a class="header" href="#rename">Rename</a></h2>
+<p>The <code>rename</code> keyword allows existing fields and methods to be renamed. Renaming is an important feature for reworking the existing behavior of members for the type definition, as it retains the member while simultaneously making room for the developer to re-create the variable or function with the original name.</p>
+<p>In order to add a trace statement to the <code>jump</code> method of the <code>Player</code> class created below, the following <code>modify</code> uses the <code>rename</code> feature to do so without removing the <code>jump</code> behavior.</p>
+<pre><code class="language-laxe">class Player:
+	var ySpeed = 0
+
+	def jump:
+		ySpeed = -10
+
+# ---
+
+modify mypackage.Player:
+	# First, rename the jump method
+	rename jump to _originalJump
+
+	# Second, create a new jump method
+	def jump:
+		# The original jump method
+		_originalJump()
+
+		# New behavior
+		trace(&quot;The player jumped&quot;)
+
+# ---
+
+var player = new Player()
+
+# Both the original jump behavior and the new behavior will be executed
+player.jump()
+</code></pre>
+<h2 id="delete"><a class="header" href="#delete">Delete</a></h2>
+<p>The <code>delete</code> keyword deletes an existing field with the same name as the provided identifier.</p>
+<pre><code class="language-laxe">class Player:
+	var ySpeed = 0
+
+	def jump:
+		ySpeed = -10 # throws error, ySpeed does not exist
+
+# ---
+
+modify mypackage.Player:
+	delete ySpeed
+</code></pre>
+<h2 id="replace"><a class="header" href="#replace">Replace</a></h2>
+<p>The <code>replace</code> keyword can be prepended to a modify member to automatically delete the existing field with the same name. An error will be thrown if a field with the same name does not exist on the type being modified.</p>
+<pre><code class="language-laxe">class Player:
+	var ySpeed = 0
+
+	def jump:
+		ySpeed = -10
+
+# ---
+
+modify mypackage.Player:
+	replace def jump:
+		ySpeed = -12
+		onJump()
+
+	def onJump:
+		pass
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="it-block"><a class="header" href="#it-block">It Block</a></h1>
+<p>The &quot;it&quot; block is a very unique feature provided by Laxe. It's similar to a <code>block</code> statement, but instead of using a specific keyword, it can be invoked by adding a colon to the end of any arbitrary expression (with some restrictions). After adding a colon, code can be added underneath like with other control flow statements, only in the code scope, the <code>it</code> variable can be used to access the result of the expression that invoked the block.</p>
+<pre><code>&lt;expression&gt;:
+	# &quot;it&quot; == &lt;expression&gt;
+	&lt;expression 1&gt;
+	&lt;expression 2&gt;
+	...
+	&lt;result value&gt;
+</code></pre>
+<p>While it may appear to be a somewhat niche feature, it can be used to construct sectioned, readable code. An example would be a function that initializes a bunch of different components, a constructor call with some extra field configuration, or even just to alias long variable names.</p>
+<pre><code class="language-laxe">class Player extends GameEntity:
+	var texture: Texture
+
+	def createComponents:
+		# If the resulting value is going to be stored somewhere anyway,
+		# it's nice to simply focus on it in its own little scope
+		self.addComponent() as Texture:
+			it.path = &quot;img/Player.png&quot;
+			it.scale.set(2)
+			it.alpha = 0.5
+			self.texture = it
+
+		self.addComponent() as CollisionRect:
+			it.rect = [0, 0, 100, 250]
+			it.weight = 25
+
+		self.addComponent() as Controllable:
+			it.allowKeyboardControls()
+			it.allowGamepadControls()
+</code></pre>
+<pre><code class="language-laxe">def getConfig:
+	# Instead of unnecessarily storing File object,
+	# the desired data can be obtained in sub-block and stored instead.
+	var data = new File(&quot;Data.ini&quot;):
+		it.type = &quot;READONLY&quot;
+		it.format = &quot;txt&quot;
+		if it.exists():
+			it.readFile()
+		else:
+			null
+
+	# prints text of Data.ini or null if it doesn't exist
+	trace(data)
+</code></pre>
+<pre><code class="language-laxe"># Might be a pain to write that name 3 times.
+minotaurPreventionThreshold:
+	if it &gt; 1000:
+		reduceMinotaurs(it - 100)
+		onMinotaursChanged(it)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tuples"><a class="header" href="#tuples">Tuples</a></h1>
+<p>Tuples are an anonymous type for associating multiple types together. They are great for returning multiple values from a function or associating small types together in type definitions.</p>
+<p>Unlike Haxe's anonymous structures, Laxe's tuples' field access is as fast as normal classes. Depending on the language target, they are either shorthand for creating a minimal, <code>@:nativeGen</code>, helper class that stores the desired data, or they act as an alias for that target's actual tuple class.</p>
+<p>However, please note Laxe tuples do not support Haxe reflection features due to their focus on performance.</p>
+<h2 id="syntax"><a class="header" href="#syntax">Syntax</a></h2>
+<p>Tuple types are written using parenthesis containing multiple types separated by commas. The order of the types matter. <code>(int, str)</code> is different from <code>(str, int)</code>.</p>
+<pre><code class="language-laxe">var myTup: (int, str)
+</code></pre>
+<p>Similarily, tuple values are created by listing multiple expressions, separated by commas and contained within parenthesis. The order of the expressions' types must match the order of the desired tuple type.</p>
+<pre><code class="language-laxe">var myTup = (12, &quot;Twelve&quot;) # infers (int, str)
+</code></pre>
+<h2 id="access"><a class="header" href="#access">Access</a></h2>
+<p>The values of a tuple can be accessed using dot-access followed by an <code>int</code> of the value's index. This value must be hardcoded, as runtime values cannot be used to directly access tuple members (unlike accessing an element on an array).</p>
+<pre><code class="language-laxe">var myTup = (12, &quot;Twelve&quot;)
+
+trace(myTup.0) # prints 12
+trace(myTup.1 == &quot;Twelve&quot;) # prints true
+</code></pre>
+<h2 id="unpacking"><a class="header" href="#unpacking">Unpacking</a></h2>
+<p>The values can also be destructed into new variables using Laxe's unpack feature. More information about this will be provided in future chapters. </p>
+<pre><code class="language-laxe">def addAndMult(one: int, two: int):
+	return (one + two, one * two)
+
+# ---
+
+var add, mult = addAndMult(3, 5)
+
+trace(add) # 8
+trace(mult) # 15
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="named-tuples"><a class="header" href="#named-tuples">Named Tuples</a></h1>
+<p>Named tuples are auto-generated wrappers for tuples with properties that modify the tuple content. Associating names with each tuple member helps readability and is an excellent choice for tuples used as class members. Although, there are some important restrictions to keep in mind. More information is provided below.</p>
+<h2 id="syntax-1"><a class="header" href="#syntax-1">Syntax</a></h2>
+<p>Named tuple types are written the same as anonymous structures with parenthesis instead of curly brackets.</p>
+<pre><code class="language-laxe">var myNamedTup: (time: int, place: str)
+</code></pre>
+<p>HOWEVER, please note unlike both unnamed tuples and anonymous structures, named tuples do not have an equivalent &quot;expression&quot; syntax. This is due to complicated restrictions with Haxe type inference. To provide a value to named tuple variables, unnamed tuples must be used.</p>
+<p>To ensure a variable, argument, or return type is a named tuple, it must be explicitly typed as such. Otherwise, the compiler will infer it to be the unnamed variant.</p>
+<pre><code class="language-laxe">var myNamedTup: (time: int, place: str) = (1200, &quot;My House&quot;)
+
+trace(myNamedTup.time) # prints 1200
+trace(myNamedTup.place) # prints &quot;My House&quot;
+
+trace(myNamedTup.0 == myNamedTup.time) # prints true
+</code></pre>
+<h2 id="unnamed-method"><a class="header" href="#unnamed-method">unnamed Method</a></h2>
+<p>Named tuples and unnamed tuples can be assigned to each other and unified without any problem as long as their type lists are the same. On the other hand, two named tuples with the same types, BUT different names, cannot be assigned to each other. To resolve this problem, the <code>unnamed</code> method is available on named tuples. This method simply casts the value's type to the unnamed equivalent.</p>
+<pre><code class="language-laxe">def saveGame(data: (time: int, place: str)):
+	saveTime(data.time)
+	savePlace(data.place)
+
+# ---
+
+var myTup = (745, &quot;Moon&quot;)
+saveGame(myTup) # valid
+
+# ---
+
+var myNamedTup: (count: int, place: str) = (10, &quot;Home&quot;)
+saveGame(myNamedTup) # invalid, first property must be named &quot;time&quot;
+
+saveGame(myNamedTup.unnamed()) # valid since unnamed tuples
+                               # are compatible with all named tuples
+</code></pre>
+<h2 id="recursive-restriction"><a class="header" href="#recursive-restriction">Recursive Restriction</a></h2>
+<p>Due to how named tuples are implemented internally in Haxe, they may not contain generic types or other named tuples. In cases where generics want to be used with tuples, unnamed tuples must be used. <em>(Might be fixed in the future??)</em></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="positional-unpack"><a class="header" href="#positional-unpack">Positional Unpack</a></h1>
+<p>Laxe's unpack feature allows for multiple variables to assigned from a single expression. This feature works very nicely with tuples. It especially works nice with tuples returned from functions, as it gives Laxe a nice, performant syntax for both setting and receiving multiple return values from functions.</p>
+<p>To use unpack, first use a variable initialization keyword (either <code>var</code> or <code>const</code>). Then follow with a list of variable names (optionally annotated with types) separated by comments. And finally, an assignment to a single expression. Please note the position of the variable names matter as the value of each variable is decided by their position.</p>
+<pre><code class="language-laxe">def weather -&gt; (int, str):
+	return (23, &quot;Snow&quot;)
+
+# ---
+
+var temp, precip = weather()
+
+# &quot;temp&quot; is first, so it is assigned the first value of the tuple
+trace(temp) # 23
+</code></pre>
+<h2 id="skipping"><a class="header" href="#skipping">Skipping</a></h2>
+<p>Underscores can be used to skip a position to access later values. Underscores will not generate new variables.</p>
+<pre><code class="language-laxe">var _, rainType = weather()
+trace(rainType) # prints &quot;Snow&quot;
+</code></pre>
+<h2 id="typing"><a class="header" href="#typing">Typing</a></h2>
+<p>Types can also be annoted in the variable list.</p>
+<pre><code class="language-laxe">var tempf: float, _ = weather()
+trace(tempf is float) # prints true
+</code></pre>
+<h2 id="custom-unpacking"><a class="header" href="#custom-unpacking">Custom Unpacking</a></h2>
+<p>Other types besides tuples can use positional unpacking. Any type can use this form of unpacking as long as it has functions named <code>componentX</code>, &quot;X&quot; being the unpack index of the variable requesting a value. For example, a class with a <code>component0</code> and a <code>component1</code> function can unpack up to 2 variables. Any more than that will throw an error.</p>
+<pre><code class="language-laxe">class Enemy:
+	var name: str
+	var hp: int
+
+	def new(name, hp):
+		self.name = name; self.hp = hp
+
+	def component0: return name
+	def component1: return hp
+
+# ---
+
+var enemy = new Enemy(&quot;Slime&quot;, 100)
+
+var name, hp = enemy
+trace(name) # prints &quot;Slime&quot;
+trace(hp) # prints 100
+
+# ---
+
+var _, _, thirdVal = enemy # error, component2 is not a member of Enemy
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="named-unpack"><a class="header" href="#named-unpack">Named Unpack</a></h1>
+<p>While positional unpacking works well for tuples, it is not that great for most normal types. In situations where variables should be assigned based on the field names of the resulting expression, named unpacking is a much better option.</p>
+<p>Named unpack works very similarly to positional unpack, only the values each variable is given is the field name of the variable. The syntax is the same, only the initialized variables must be surronded with curly brackets. The following example provides a good demonstration.</p>
+<pre><code class="language-laxe">class Armor:
+	var name: str
+	var weight: float
+	var strength: int
+
+	def new(name: str, weight: float, strength: int):
+		self.name = name; self.weight = weight; self.strength = strength
+
+# ---
+
+var armor = new Armor(&quot;Boots&quot;, 37.2, 20)
+
+var { weight, name } = armor
+trace(weight) # prints 37.2
+trace(name) # prints &quot;Boots&quot;
+</code></pre>
+<p>As demonstrated above, the order of the variables does not matter. However, the variable names must match a name of a variable or property within the type.</p>
+<pre><code class="language-laxe"># error, power is not a member of Armor
+var { power } = armor
+</code></pre>
+<p>On the other hand, named unpack is much more powerful than the positional variation, as it has immediate compatibility with all types.</p>
+<pre><code class="language-laxe">var { length } = [2, 5, 7]
+trace(length) # prints 3
+
+# ---
+
+var { pow } = Math
+trace(pow(3, 3)) # prints 27
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>
